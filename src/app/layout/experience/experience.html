@@ -1,0 +1,29 @@
+<section class="listing-page experience">
+  <div class="page-heading">
+    <span class="eyebrow">04 / Experience</span>
+    <h1>The path<br />so <em>far.</em></h1>
+    <p>
+      Every role added a new layer: shipping, operating, automating, and learning what reliable
+      really means.
+    </p>
+  </div>
+  <div class="timeline">
+    @for (item of experiences(); track item._id || item.company + item.role) {
+      <article class="timeline-item">
+        <div class="timeline-date">{{ item.start }} — {{ item.current ? 'Now' : item.end }}</div>
+        <div class="timeline-body">
+          <span>{{ item.type }} · {{ item.location }}</span>
+          <h2>{{ item.role }}</h2>
+          <h3>{{ item.company }}</h3>
+          <ul>
+            @for (point of item.points; track point) {
+              <li>{{ point }}</li>
+            }
+          </ul>
+        </div>
+      </article>
+    } @empty {
+      <p>No experience published yet.</p>
+    }
+  </div>
+</section>

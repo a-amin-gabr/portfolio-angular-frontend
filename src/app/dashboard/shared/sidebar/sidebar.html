@@ -1,0 +1,30 @@
+<aside class="dashboard-sidebar">
+  <a routerLink="/" class="dashboard-brand"
+    ><span>AG</span>
+    <div>
+      <strong>{{ data.profile?.name }}</strong
+      ><small>Operations console</small>
+    </div></a
+  >
+  <div class="sidebar-rule"></div>
+  <p class="sidebar-label">Workspace</p>
+  <nav>
+    <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+      ><span>⌂</span>Overview</a
+    >
+    <a routerLink="/dashboard/profile" routerLinkActive="active"><span>◌</span>Profile</a>
+    <a routerLink="/dashboard/projects" routerLinkActive="active"
+      ><span>↗</span>Projects <b>{{ data.projects.length }}</b></a
+    >
+    <a routerLink="/dashboard/skills" routerLinkActive="active"
+      ><span>✦</span>Skills <b>{{ data.skills.length }}</b></a
+    >
+    <a routerLink="/dashboard/experience" routerLinkActive="active"
+      ><span>◷</span>Experience <b>{{ data.experiences.length }}</b></a
+    >
+    <a routerLink="/dashboard/certificates" routerLinkActive="active"
+      ><span>◇</span>Certificates <b>{{ data.certificates.length }}</b></a
+    >
+  </nav>
+  <a routerLink="/" class="view-public">View public site ↗</a>
+</aside>

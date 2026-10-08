@@ -1,0 +1,58 @@
+.experience .page-heading {
+  max-width: 980px;
+}
+.timeline {
+  border-top: 1px solid var(--line);
+  margin-top: 82px;
+}
+.timeline-item {
+  display: grid;
+  gap: clamp(35px, 8vw, 130px);
+  grid-template-columns: 190px 1fr;
+  padding: 52px 0;
+  border-bottom: 1px solid var(--line);
+}
+.timeline-date {
+  color: var(--blue);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.timeline-body > span {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.timeline-body h2 {
+  font-size: clamp(38px, 5.5vw, 78px);
+  font-weight: 500;
+  letter-spacing: -0.09em;
+  line-height: 0.92;
+  margin: 22px 0 8px;
+}
+.timeline-body h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+.timeline-body ul {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 30px 0 0;
+  max-width: 760px;
+  padding-left: 20px;
+}
+.timeline-body li {
+  margin: 9px 0;
+}
+@media (max-width: 650px) {
+  .timeline-item {
+    display: block;
+  }
+  .timeline-body {
+    margin-top: 24px;
+  }
+}

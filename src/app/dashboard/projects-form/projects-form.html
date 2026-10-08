@@ -1,0 +1,38 @@
+<section class="editor-section">
+  <div class="editor-intro">
+    <span class="card-kicker">Your proof of work</span>
+    <h2>Projects</h2>
+    <p>Make every case study earn its place.</p>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="add()" class="form-grid editor-form">
+    <label>Project name<input formControlName="name" /></label
+    ><label
+      >Status<select formControlName="status">
+        <option value="live">Live</option>
+        <option value="in-progress">In progress</option>
+        <option value="archived">Archived</option>
+      </select></label
+    ><label class="wide"
+      >Description<textarea rows="4" formControlName="description"></textarea></label
+    ><label>Technologies <small>comma separated</small><input formControlName="tech" /></label
+    ><label>Image path<input formControlName="image" /></label
+    ><label>Live URL<input formControlName="live" /></label
+    ><label>GitHub URL<input formControlName="github" /></label
+    ><label class="wide"
+      >Highlights <small>comma separated</small><input formControlName="highlights" /></label
+    ><label class="check"
+      ><input type="checkbox" formControlName="featured" /> Featured project</label
+    ><button class="save-button">Add project <span>+</span></button>
+  </form>
+  <div class="records">
+    @for (item of state.data().projects; track item._id || item.name) {
+      <div class="record">
+        <div>
+          <strong>{{ item.name }}</strong
+          ><small>{{ item.status }} · {{ item.tech.join(', ') }}</small>
+        </div>
+        <button (click)="remove(item._id)">Delete</button>
+      </div>
+    }
+  </div>
+</section>

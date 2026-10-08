@@ -1,0 +1,40 @@
+<section class="home">
+  <div class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">01 / DevOps · Cloud · Automation</span>
+      <h1>Build systems<br />people can <em>trust.</em></h1>
+      <p>{{ data().profile?.headline }}</p>
+      <div class="hero-actions">
+        <a routerLink="/work" class="button button-primary">Explore my work <span>↗</span></a
+        ><a routerLink="/contact" class="button button-quiet">Start a conversation</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img src="imgs/logo.jpeg" alt="Abdallah Gabr" /><span
+        >AVAILABLE FOR<br />MEANINGFUL BUILDS</span
+      ><strong>CAI<br />RO</strong>
+    </div>
+  </div>
+  <div class="intro">
+    <span class="eyebrow">02 / The point of view</span>
+    <div>
+      <h2>The layer between code and confidence.</h2>
+      <p>{{ data().profile?.about }}</p>
+      <a routerLink="/experience" class="text-link">See the path so far ↗</a>
+    </div>
+  </div>
+  <div class="metrics">
+    <div>
+      <strong>{{ data().projects.length | number: '2.0' }}</strong
+      ><span>case studies</span>
+    </div>
+    <div>
+      <strong>{{ data().certificates.length | number: '2.0' }}</strong
+      ><span>certifications</span>
+    </div>
+    <div>
+      <strong>{{ data().skills.length | number: '2.0' }}</strong
+      ><span>tools in the kit</span>
+    </div>
+  </div>
+</section>

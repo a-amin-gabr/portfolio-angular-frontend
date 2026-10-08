@@ -1,0 +1,18 @@
+<section class="contact">
+  <span class="eyebrow">05 / Contact</span>
+  <h1>Let’s make<br />something <em>reliable.</em></h1>
+  <p class="contact-intro">
+    Have a platform to improve, a delivery problem to untangle, or a sharp idea that needs an
+    operating system? I’d like to hear about it.
+  </p>
+  <div class="contact-links">
+    <a [href]="'mailto:' + profile()?.email"
+      ><span>Email</span><strong>{{ profile()?.email }} ↗</strong></a
+    ><a [href]="profile()?.linkedin" target="_blank" rel="noreferrer"
+      ><span>LinkedIn</span><strong>Connect professionally ↗</strong></a
+    ><a [href]="profile()?.github" target="_blank" rel="noreferrer"
+      ><span>GitHub</span><strong>See the source ↗</strong></a
+    >
+  </div>
+  <a routerLink="/" class="back-link">← Back to overview</a>
+</section>

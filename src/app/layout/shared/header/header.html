@@ -1,0 +1,16 @@
+<header class="site-header">
+  <a routerLink="/" class="brand" aria-label="Abdallah Gabr home">
+    <img src="imgs/logo.jpeg" alt="Abdallah Gabr logo" />
+    <span>{{ data.profile?.name }}</span>
+  </a>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+      >Overview</a
+    >
+    <a routerLink="/work" routerLinkActive="active">Work</a>
+    <a routerLink="/certifications" routerLinkActive="active">Certifications</a>
+    <a routerLink="/experience" routerLinkActive="active">Experience</a>
+    <a routerLink="/contact" routerLinkActive="active">Contact</a>
+  </nav>
+  <a routerLink="/dashboard" class="header-action">Studio <span>↗</span></a>
+</header>

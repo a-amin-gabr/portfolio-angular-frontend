@@ -1,0 +1,32 @@
+<section class="editor-section">
+  <div class="editor-intro">
+    <span class="card-kicker">Proof of curiosity</span>
+    <h2>Certificates</h2>
+    <p>Document the things you chose to learn deeply.</p>
+  </div>
+  <form #form="ngForm" (ngSubmit)="add(form)" class="form-grid editor-form">
+    <label>Certificate name<input name="name" [(ngModel)]="certificate.name" required /></label
+    ><label>Issuer<input name="issuer" [(ngModel)]="certificate.issuer" required /></label
+    ><label>Credential code<input name="code" [(ngModel)]="certificate.code" required /></label
+    ><label>Date<input type="date" name="date" [(ngModel)]="certificate.date" required /></label
+    ><label
+      >Credential URL<input name="credentialUrl" [(ngModel)]="certificate.credentialUrl" /></label
+    ><label
+      >Status<select name="status" [(ngModel)]="certificate.status">
+        <option value="active">Active</option>
+        <option value="expired">Expired</option>
+      </select></label
+    ><button class="save-button">Add certificate <span>+</span></button>
+  </form>
+  <div class="records">
+    @for (item of state.data().certificates; track item._id || item.code) {
+      <div class="record">
+        <div>
+          <strong>{{ item.name }}</strong
+          ><small>{{ item.issuer }} · {{ item.code }}</small>
+        </div>
+        <button (click)="remove(item._id)">Delete</button>
+      </div>
+    }
+  </div>
+</section>

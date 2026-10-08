@@ -1,0 +1,45 @@
+<section class="editor-section">
+  <div class="editor-intro">
+    <span class="card-kicker">The path so far</span>
+    <h2>Experience</h2>
+    <p>Show the chapters that shaped how you work.</p>
+  </div>
+  <form #form="ngForm" (ngSubmit)="add(form)" class="form-grid editor-form">
+    <label>Role<input name="role" [(ngModel)]="experience.role" required /></label
+    ><label>Company<input name="company" [(ngModel)]="experience.company" required /></label
+    ><label>Location<input name="location" [(ngModel)]="experience.location" /></label
+    ><label
+      >Type<select name="type" [(ngModel)]="experience.type">
+        <option value="remote">Remote</option>
+        <option value="hybrid">Hybrid</option>
+        <option value="on-site">On-site</option>
+      </select></label
+    ><label
+      >Start year<input
+        name="start"
+        [(ngModel)]="experience.start"
+        required
+        placeholder="2024" /></label
+    ><label>End year<input name="end" [(ngModel)]="experience.end" /></label
+    ><label class="wide"
+      >What did you do? <small>one point per line</small
+      ><textarea rows="4" name="points" [(ngModel)]="experience.points"></textarea></label
+    ><label class="check"
+      ><input type="checkbox" name="current" [(ngModel)]="experience.current" /> Current
+      position</label
+    ><button class="save-button">Add experience <span>+</span></button>
+  </form>
+  <div class="records">
+    @for (item of state.data().experiences; track item._id || item.company) {
+      <div class="record">
+        <div>
+          <strong>{{ item.role }}</strong
+          ><small
+            >{{ item.company }} · {{ item.start }}—{{ item.current ? 'now' : item.end }}</small
+          >
+        </div>
+        <button (click)="remove(item._id)">Delete</button>
+      </div>
+    }
+  </div>
+</section>

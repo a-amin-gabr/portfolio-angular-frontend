@@ -1,0 +1,31 @@
+<section class="listing-page certifications">
+  <div class="page-heading">
+    <span class="eyebrow">03 / Credentials</span>
+    <h1>Signals of<br /><em>depth.</em></h1>
+    <p>
+      Certifications are not the destination. They are evidence of the systems I choose to
+      understand properly.
+    </p>
+  </div>
+  <div class="certificate-grid">
+    @for (certificate of certificates(); track certificate._id || certificate.code) {
+      <article class="certificate-card">
+        <div class="certificate-image">
+          <img [src]="imageFor(certificate)" [alt]="certificate.name + ' badge'" loading="lazy" />
+        </div>
+        <div class="certificate-meta">
+          <span>{{ certificate.code }}</span>
+          <h2>{{ certificate.name }}</h2>
+          <p>{{ certificate.issuer }} · {{ certificate.date }}</p>
+          @if (certificate.credentialUrl) {
+            <a [href]="certificate.credentialUrl" target="_blank" rel="noreferrer"
+              >Verify credential ↗</a
+            >
+          }
+        </div>
+      </article>
+    } @empty {
+      <p>No credentials published yet.</p>
+    }
+  </div>
+</section>

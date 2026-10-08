@@ -1,0 +1,52 @@
+<section class="welcome-card">
+  <div>
+    <span class="card-kicker">Your portfolio at a glance</span>
+    <h2>Shape the story<br /><em>as you go.</em></h2>
+    <p>
+      Everything you add here becomes part of your public portfolio. No deploy needed — just write,
+      save, and keep moving.
+    </p>
+    <a routerLink="/dashboard/profile" class="accent-button">Edit your profile <span>→</span></a>
+  </div>
+  <div class="welcome-mark">✳</div>
+</section>
+<div class="stats-grid">
+  <a routerLink="/dashboard/projects">
+    <span>Projects</span>
+    <strong>{{ state.data().projects.length | number: '2.0' }}</strong>
+    <small>Stories in your portfolio →</small>
+  </a>
+  <a routerLink="/dashboard/skills">
+    <span>Skills</span>
+    <strong>{{ state.data().skills.length | number: '2.0' }}</strong>
+    <small>Tools in your toolkit →</small>
+  </a>
+  <a routerLink="/dashboard/experience">
+    <span>Timeline</span>
+    <strong>{{ state.data().experiences.length | number: '2.0' }}</strong>
+    <small>Career chapters →</small>
+  </a>
+</div>
+<section class="recent-section">
+  <div class="section-title">
+    <h3>Quick actions</h3>
+    <span>Build your story</span>
+  </div>
+  <div class="quick-actions">
+    <a routerLink="/dashboard/projects">
+      <span>01</span>
+      <b>Add a project</b>
+      <i>↗</i>
+    </a>
+    <a routerLink="/dashboard/skills">
+      <span>02</span>
+      <b>Add a skill</b>
+      <i>↗</i>
+    </a>
+    <a routerLink="/dashboard/certificates">
+      <span>03</span>
+      <b>Add a certificate</b>
+      <i>↗</i>
+    </a>
+  </div>
+</section>

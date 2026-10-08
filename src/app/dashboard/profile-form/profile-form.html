@@ -1,0 +1,25 @@
+<section class="editor-section">
+  <div class="editor-intro">
+    <span class="card-kicker">The first impression</span>
+    <h2>Your profile</h2>
+    <p>Keep this focused. Your headline is the sentence someone remembers.</p>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="save()" class="editor-form">
+    <div class="form-grid">
+      <label>Full name<input formControlName="name" placeholder="Your full name" /></label
+      ><label
+        >Role / title<input formControlName="title" placeholder="Your professional title"
+      /></label>
+      <label class="wide">Headline<input formControlName="headline" /></label>
+      <label class="wide">About<textarea rows="5" formControlName="about"></textarea></label>
+      <label>Email<input type="email" formControlName="email" /></label>
+      <label>Phone<input formControlName="phone" /></label>
+      <label>Location<input formControlName="location" /></label>
+      <label>GitHub URL<input formControlName="github" /></label
+      ><label>LinkedIn URL<input formControlName="linkedin" /></label
+      ><label>CV URL<input formControlName="cvUrl" /></label
+      ><label class="wide">Portfolio URL<input formControlName="portfolio" /></label>
+    </div>
+    <button class="save-button" [disabled]="state.busy()">Save profile <span>→</span></button>
+  </form>
+</section>
